@@ -1,7 +1,6 @@
 {
-  "name": "payment-service",
+  "name": "email-service",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
     "kafkajs": "^2.2.4"
   }
 }

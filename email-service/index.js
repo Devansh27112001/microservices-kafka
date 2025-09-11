@@ -40,3 +40,4 @@ const run = async () => {
     console.log("Error in email-service", error);
   }
 };
+run();

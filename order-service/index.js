@@ -39,3 +39,5 @@ const run = async () => {
     console.log("Error connecting to kafka", error);
   }
 };
+
+run();

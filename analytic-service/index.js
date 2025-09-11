@@ -21,7 +21,7 @@ const run = async () => {
           case "payment-successful":
             {
               const paymentValue = message.value.toString();
-              const { userId, cart } = JSON.parse(value);
+              const { userId, cart } = JSON.parse(paymentValue);
 
               const totalVal = cart.reduce((acc, curr) => acc + curr.price, 0);
               console.log(`Analytic consumer: User ${userId} paid ${totalVal}`);
@@ -32,23 +32,24 @@ const run = async () => {
               const ordervalue = message.value.toString();
               const { userId, orderId } = JSON.parse(ordervalue);
 
-              console.log(`Analytic consumer: User ${userId} paid ${totalVal}`);
+              console.log(
+                `Analytic consumer: Order created for user ${userId} with order-id:${orderId}`
+              );
             }
             break;
           case "email-successful":
             {
               const emailValue = message.value.toString();
               const { userId, emailId } = JSON.parse(emailValue);
+
+              console.log(
+                `Analytic consumer: Email send for user ${userId} with email-id:${emailId}`
+              );
             }
             break;
           default:
             break;
         }
-        const value = message.value.toString();
-        const { userId, cart } = JSON.parse(value);
-
-        const totalVal = cart.reduce((acc, curr) => acc + curr.price, 0);
-        console.log(`Analytic consumer: User ${userId} paid ${totalVal}`);
       },
     });
   } catch (error) {
